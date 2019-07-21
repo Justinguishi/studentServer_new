@@ -27,6 +27,16 @@ app.get('/:fileName', function (req, res) {
  }); 
 
  
+ 
+ app.use(function(req, res, next) { 
+   res.header("Access-Control-Allow-Origin", "*"); 
+   res.header("Access-Control-Allow-Headers", "X-Requested-With"); 
+   next(); 
+ }); 
+
+ 
+ 
+ 
 // serve static files - e.g. html, css 
 // this should always be the last line in the server file 
 app.use(express.static(__dirname)); 
