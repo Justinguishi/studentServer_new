@@ -2,6 +2,7 @@
 var express = require('express'); 
 var path = require("path"); 
 var app = express(); 
+
 // add an http server to serve files to the Edge browser  
  // due to certificate issues it rejects the https files if they are not 
  // directly called in a typed URL 
@@ -17,7 +18,10 @@ app.get('/:fileName', function (req, res) {
  res.sendFile(__dirname + '/'+ fileName); 
 }); 
 
-
+ 
+ 
+ 
+ 
  // adding functionality to log the requests 
  app.use(function (req, res, next) { 
   var filename = path.basename(req.url); 
@@ -27,6 +31,6 @@ app.get('/:fileName', function (req, res) {
  }); 
 
  
-// serve static files - e.g. html, css 
+ // serve static files - e.g. html, css 
 // this should always be the last line in the server file 
 app.use(express.static(__dirname)); 
