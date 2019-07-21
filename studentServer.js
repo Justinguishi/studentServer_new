@@ -25,3 +25,5 @@ app.get('/:fileName', function (req, res) {
   console.log("The file " + filename + " was requested."); 
   next(); 
  }); 
+
+ 
