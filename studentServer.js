@@ -27,3 +27,6 @@ app.get('/:fileName', function (req, res) {
  }); 
 
  
+// serve static files - e.g. html, css 
+// this should always be the last line in the server file 
+app.use(express.static(__dirname)); 
